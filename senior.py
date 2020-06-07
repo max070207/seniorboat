@@ -332,3 +332,5 @@ async def avatar_error(ctx, error):
 """
 # Run
 token = os.environ.get('BOT_TOKEN')
+
+bot.run(str(token))
