@@ -6,7 +6,7 @@ import random
 from random import randint
 import os
 
-TOKEN = 'NzE3NzUzNzIyMjY4MDI0ODMz.Xte6SA.77LAumjtgJatM9SZqaQfW7psFSM' # bot token
+TOKEN = 'TOKEN' # bot token
 prefix = "!"
 bot = commands.Bot(command_prefix = prefix)
 bot.remove_command("help")
@@ -24,10 +24,10 @@ MAX_ROLES_PER_USER = 99999 # max amount of user a roles can have
 @bot.event
 async def on_ready():
     print('Logged successfully!')
-"""
+
     await bot.change_presence(status = discord.Status.online, activity = discord.Game('!help'))
-"""
-"""
+
+
 @bot.event
 async def on_member_join(member):
 	channel = bot.get_channel(714540713081045063)
@@ -39,14 +39,14 @@ async def on_member_join(member):
 async def on_member_remove(member):
 	channel = bot.get_channel(714540713081045063)
 	await channel.send(f'Пользователь {member.mention} покинул сервер.')
-"""
-"""
+
+
 @bot.event
 async def on_command_error(ctx, error):
 	if isinstance(error, commands.CommandNotFound):
 		await ctx.send(f'{ctx.author.name}, такой команды не существует')
-"""
-"""
+
+
 @bot.event
 async def on_message(message):
 	await bot.process_commands(message)
@@ -54,7 +54,7 @@ async def on_message(message):
 	if msg in bad_words:
 		await message.delete()
 		await message.author.send(f'{message.author.name}, используйте меньше мата, пожалуйста')
-"""
+
 @bot.event
 async def on_raw_reaction_add(payload):
 	channel = bot.get_channel(payload.channel_id) # получаем объект канала
@@ -268,7 +268,7 @@ async def leave(ctx):
 """
 Ошибки:
 """
-"""
+
 @mute.error
 async def mute_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
@@ -329,7 +329,7 @@ async def question_error(ctx, error):
 async def avatar_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
 		await ctx.send(f'{ctx.author.mention},  упомяни участника, аватар которого хочешь увидеть')
-"""
+
 # Run
 token = os.environ.get('BOT_TOKEN')
 
